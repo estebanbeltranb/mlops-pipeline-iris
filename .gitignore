@@ -1,0 +1,13 @@
+# Entorno virtual (cada persona crea el suyo; es muy pesado)
+venv/
+
+# Archivos que genera el pipeline al ejecutarse
+data/processed/
+models/
+logs/
+mlruns/
+mlflow.db
+
+# Archivos temporales de Python y pytest
+__pycache__/
+.pytest_cache/

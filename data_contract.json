@@ -1,0 +1,61 @@
+{
+  "nombre": "Contrato de datos - Clasificador de flores Iris",
+  "version": "1.0.0",
+  "descripcion": "Define las columnas, tipos y rangos que deben cumplir los datos de entrada del modelo, tanto en el entrenamiento como en la inferencia futura.",
+  "unidades": "Todas las medidas están en centímetros (cm).",
+  "columnas_entrada": {
+    "sepal length (cm)": {
+      "descripcion": "Longitud del sépalo",
+      "tipo": "float",
+      "permite_nulos": false,
+      "minimo": 4.0,
+      "maximo": 8.0
+    },
+    "sepal width (cm)": {
+      "descripcion": "Ancho del sépalo",
+      "tipo": "float",
+      "permite_nulos": false,
+      "minimo": 2.0,
+      "maximo": 4.5
+    },
+    "petal length (cm)": {
+      "descripcion": "Longitud del pétalo",
+      "tipo": "float",
+      "permite_nulos": false,
+      "minimo": 1.0,
+      "maximo": 7.0
+    },
+    "petal width (cm)": {
+      "descripcion": "Ancho del pétalo",
+      "tipo": "float",
+      "permite_nulos": false,
+      "minimo": 0.1,
+      "maximo": 2.6
+    }
+  },
+  "columna_objetivo": {
+    "species": {
+      "descripcion": "Especie de la flor: 0 = setosa, 1 = versicolor, 2 = virginica. Solo se exige en los datos de entrenamiento; en la inferencia la predice el modelo.",
+      "tipo": "int",
+      "permite_nulos": false,
+      "valores_permitidos": [0, 1, 2]
+    }
+  },
+  "ejemplo_entrada_valida": {
+    "sepal length (cm)": 5.1,
+    "sepal width (cm)": 3.5,
+    "petal length (cm)": 1.4,
+    "petal width (cm)": 0.2
+  },
+  "ejemplo_entrada_invalida": {
+    "sepal length (cm)": "cinco",
+    "sepal width (cm)": null,
+    "petal length (cm)": 15.0
+  },
+  "errores_esperados_entrada_invalida": [
+    "sepal length (cm): tipo incorrecto (es texto, se esperaba un número)",
+    "sepal width (cm): valor nulo",
+    "petal length (cm): fuera de rango (15.0 no está entre 1.0 y 7.0)",
+    "petal width (cm): columna obligatoria ausente"
+  ]
+}
